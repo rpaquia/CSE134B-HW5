@@ -1,0 +1,194 @@
+html * {
+    font-size: 2vw;
+    font-size: 2vh;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+#toppart {
+    background-color: #99CDA9
+}
+.homepage {
+    height:100%;
+}
+h1 {
+    color:black;
+    text-align: center;
+    font-size: 3em;
+}
+:root {
+    --chinook: #99CDA9;
+}
+body {
+    background-color:var(--chinook);
+}
+.body2 {
+    width:100%;
+    height:100vh;
+    background:linear-gradient(
+        to top, #99CDA9 0%, #99CDA9 50%,
+        #E5F4E7 50%, #E5F4E7 100%
+    );
+}
+#p1 {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    text-align: center;
+}
+h1 {
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+h2 {
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+span {
+    font-size: 2em;
+}
+#nav1 {
+    text-align: right;
+}
+#nav2 {
+    text-align: left;
+}
+#h2 {
+    text-align: center;
+}
+
+input[type=text] {
+    border:2px solid #D1E9D2;
+}
+.submit {
+    background-color: #F1FDF3;
+    border: 10px solid #99CDA9;
+    color: black;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+
+/* CSS transition */
+button {
+    width:100px;
+    height:25px;
+    background: white;
+    transition: width 2s;
+}
+#button_tran:hover {
+    width: 200px;
+}
+
+/* Top and bottom links styling */
+a:link, a:visited {
+    background-color: #99CDA9;
+    color: #F1FDF3;
+    padding: 14px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+  }
+  a:hover, a:active {
+    background-color: #D1E9D2;
+  }
+
+/* Change colors for project 1 and 2 headers (CSS animation) */
+#div1 {
+    width: fit-content;
+    height: 25px;
+    animation-name: project;
+    animation-duration: 4s;
+}
+@keyframes project {
+    0% {background-color: #F1FDF3}
+    25% {background-color: #E5F4E7}
+    50% {background-color: #D1E9D2}
+    100% {background-color: #99CDA9}
+} 
+
+#changeName {
+    width: 80px;
+    height: 25px;
+    animation-name: project;
+    animation-duration: 4s;
+}
+@keyframes project {
+    0% {background-color: #F1FDF3}
+    25% {background-color: #E5F4E7}
+    50% {background-color: #D1E9D2}
+    100% {background-color: #99CDA9}
+}
+
+/* CSS transform */
+div.rot {
+    width: 200px;
+    height: 25px;
+    background-color: white;
+    transform:skewX(20deg);
+    padding-left: 50px;
+}
+
+#spacer {
+    background-color: #99CDA9;
+    padding-bottom: 200px;
+}
+
+/*Adjustments for phone(iphone13) viewport and lower)*/
+@media screen and (max-width:390px) {
+    #nav1 {
+        text-align: center;
+    }
+    #nav2 {
+        text-align: center;
+    }
+    p {
+        text-align: center;
+    }
+    div {
+        text-align: center;
+    }
+}
+
+@media screen and (max-width:800px) {
+    #nav1 {
+        text-align: center;
+    }
+    #nav2 {
+        text-align: center;
+    }
+    p {
+        text-align: center;
+    }
+    div {
+        text-align: center;
+    }
+}
+#header2 {
+    text-align: center;
+    font-size: 2rem;
+}
+
+/*flexbox testing*/
+.flex-container {
+    display:flex;
+    background-color: purple;
+    width: 450px;
+}
+.flex-container > div {
+    background-color:darkcyan;
+    margin: 15px; /*space between boxes*/
+    padding: 30px;
+    font-size: 20px;
+}
+
+.header img {
+    float: left;
+    width: 100px;
+    height: 100px;
+  }
+  .header h1 {
+    position: relative;
+    top: 20px;
+    left: 50px;
+  }
+

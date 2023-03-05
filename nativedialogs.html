@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Native Dialogs Page</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.0.1/purify.js" integrity="sha512-TRW4uJEyH03RBYDDP/0Nerf3y1zPCPzmLBq5IwjYtUyPD505Aro7Xh6ELpKmnH3yeKj6MP3meheJMJXB4aN0eQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.0.1/purify.min.js" integrity="sha512-TU4FJi5o+epsahLtM9OFRvH2gXmmlzGlysk9wtTFgbYbMvFzh3Cw1l3ubnYIvBiZCC/aurRHS408TeEbcuOoyQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+
+
+<body>
+    <h1>Native Dialogs</h1>
+    <main>
+        <!--Button 1 (Alert)-->
+        <button id="btn1">Alert</button>
+            <script>
+                document.getElementById("btn1").addEventListener("click", function() {
+                    alert("This is an ALERT");
+                });
+            </script> 
+
+        <!--Button 2 (Confirm)-->
+        <button id="btn2">Confirm</button>
+        
+            <script>
+                document.getElementById("btn2").addEventListener("click", confirmClick);
+                function confirmClick() {
+                    let text = "Press Ok or Cancel.";
+                    if(confirm(text) == true) {
+                        text = "The value returned by the confirm method is Ok";
+                    }
+                    else {
+                        text = "The value returned by the confirm method is Cancel";
+                    }
+                    document.getElementById("txt").innerHTML = text;
+                }
+            </script>
+        
+        <!-- Button 3 (Prompt)-->
+        <button id="btn3">Prompt</button>
+        
+            <script>
+                document.getElementById("btn3").addEventListener("click", promptUp);
+                function promptUp() {
+                    let text;
+                    let input = prompt("Enter a color", "Type Here");
+                    if(input == null || input == "") {
+                        text = "User entered nothing";
+                    }
+                    else {
+                        text = "You chose " + input + "!";
+                    }
+                    document.getElementById("output").innerHTML = text;
+                }
+            </script>
+        
+        <!--Button 4 (Safer Prompt)-->
+        <button id="btn4">Safer Prompt</button> 
+        
+            <script>
+                document.getElementById("btn4").addEventListener("click", promptUp);
+                function promptUp() {
+                    let text;
+                    let clean;
+                    let input = prompt("Enter a color", "Type Here");
+                    if(input == null || input == "") {
+                        text = "User entered nothing";
+                    }
+                    else {
+                        text = "You chose " + input + "!";
+                        clean = DOMPurify.sanitize(text);
+                        document.querySelector("output").innerHTML = clean;
+                    }
+                }
+            </script>
+        <hr>
+        <br>
+        <!--Confirm, Prompt, Safer Prompt outputs(top to bottom)-->
+        <output id="txt"></output>
+        <output id="output"></output>
+        <output id="output"></output>
+    </main>
+
+    <footer>
+
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.0.1/purify.js" integrity="sha512-TRW4uJEyH03RBYDDP/0Nerf3y1zPCPzmLBq5IwjYtUyPD505Aro7Xh6ELpKmnH3yeKj6MP3meheJMJXB4aN0eQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.0.1/purify.min.js" integrity="sha512-TU4FJi5o+epsahLtM9OFRvH2gXmmlzGlysk9wtTFgbYbMvFzh3Cw1l3ubnYIvBiZCC/aurRHS408TeEbcuOoyQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</body>
+</html>

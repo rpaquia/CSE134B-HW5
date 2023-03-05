@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Custom Dialogs Page</title>
+    <script src="customdialog.js" type="module"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.0.1/purify.js" integrity="sha512-TRW4uJEyH03RBYDDP/0Nerf3y1zPCPzmLBq5IwjYtUyPD505Aro7Xh6ELpKmnH3yeKj6MP3meheJMJXB4aN0eQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.0.1/purify.min.js" integrity="sha512-TU4FJi5o+epsahLtM9OFRvH2gXmmlzGlysk9wtTFgbYbMvFzh3Cw1l3ubnYIvBiZCC/aurRHS408TeEbcuOoyQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+
+
+<body>
+    <h1>Custom Dialogs</h1>
+    <main>
+        <!--Custom Alert Button-->
+        <dialog id="alertDialog">
+            <p>Alert was pressed!</p>
+                <form method="dialog">
+                    <button>Ok!</button>
+                </form>
+        </dialog>
+        <button id="alertButton">Alert</button>
+
+        <!--Custom Confirm Button-->
+        <dialog id="confirmDialog">
+            <form method="dialog">
+            <p>Do you confirm?</p>
+                <div>
+                    <button value="false">Cancel</button>
+                    <button id="confirmBtn" value="true">Confirm</button>
+                </div>    
+            </form>
+        </dialog>
+        <button id="btn2">Confirm</button>
+           
+        <!--Custom Prompt Button-->
+        <dialog id="promptDialog">
+        <form method="dialog">
+            <p>State your first name.</p>
+            <input type="text" id="nameInput" value="Enter name here">
+            <script>
+                let clean;
+                let name = document.getElementById("nameInput").value;
+                clean = DOMPurify.sanitize(name);
+                document.getElementById("nameInput").innerHTML = clean;            
+            </script>
+            <p>
+                <button value="false">Cancel</button>
+                <button id="confirmBtn" value="true">Confirm</button>
+            </p>
+        </form>
+        </dialog>
+        <button id="promptBtn">Prompt</button>
+        <hr>
+        <br>
+        <output id="out"></output> 
+        <output id="outName"></output>
+    </main>
+
+    <footer>
+
+    </footer>
+</body>
+</html>
