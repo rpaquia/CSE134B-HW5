@@ -46,6 +46,8 @@ function addItem() {
     //clear all input boxes
     inputTitleBox.value = "";
     inputSumBox.value = "";
+
+    console.log("here")
 }
 
 // function for removing items, then saving updated array
