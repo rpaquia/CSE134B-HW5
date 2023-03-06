@@ -7,6 +7,7 @@ const addDialogPopup = document.getElementById('addDiagBox');
 const output = document.getElementById('out'); 
 screenAddBtn.addEventListener('click', () => {
     addDialogPopup.showModal();
+    addItem();
 });
 addDialogPopup.addEventListener('close', () => {
     listItems();
