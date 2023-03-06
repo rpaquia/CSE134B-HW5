@@ -19,7 +19,7 @@ addDialogPopup.addEventListener('close', () => {
 saveButton.addEventListener('click', addItem);
 
 // Function that adds items to blog 
-function addItem() {
+function addItem() { // Works
     // gets value that is put inside <input> with querySelector
     let inputTitleBox = document.querySelector('#nameInput');
     let inputSumBox = document.querySelector('#sumInput');
@@ -57,7 +57,7 @@ function addItem() {
 // function for removing items, then saving updated array
 // to local storage
 function deleteItem(index) {
-    items.splice(index, 1);
+    items.splice(index, 2);
     localStorage.setItem("blog-list", JSON.stringify(items));
     listItems();
   }
