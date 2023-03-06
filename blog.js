@@ -9,10 +9,10 @@ const output = document.getElementById('out');
 const saveButton = document.getElementById('saveBut');
 
 
-screenAddBtn.addEventListener('click', () => {
-    addDialogPopup.showModal();
+//screenAddBtn.addEventListener('click', () => {
+  //  addDialogPopup.showModal();
     
-});
+//});
 addDialogPopup.addEventListener('close', () => {
     listItems();
 });
@@ -53,8 +53,6 @@ function addItem() {
     //clear all input boxes
     inputTitleBox.value = "";
     inputSumBox.value = "";
-
-    console.log("here")
 }
 
 // function for removing items, then saving updated array
