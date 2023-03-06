@@ -4,14 +4,20 @@ let items = JSON.parse(localStorage.getItem("blog-list")) || [];
 // Code for opening dialog box
 const screenAddBtn = document.getElementById('addBtn');
 const addDialogPopup = document.getElementById('addDiagBox');
-const output = document.getElementById('out'); 
+const output = document.getElementById('out');
+
+const saveButton = document.getElementById('saveBut');
+
+
 screenAddBtn.addEventListener('click', () => {
     addDialogPopup.showModal();
-    addItem();
+    
 });
 addDialogPopup.addEventListener('close', () => {
     listItems();
 });
+
+saveButton.addEventListener('click', addItem);
 
 // Function that adds items to blog 
 function addItem() {
