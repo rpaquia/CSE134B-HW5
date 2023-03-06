@@ -15,8 +15,8 @@ addDialogPopup.addEventListener('close', () => {
 // Function that adds items to blog 
 function addItem() {
     // gets value that is put inside <input> with querySelector
-    let inputTitleBox = document.querySelector('nameInput');
-    let inputSumBox = document.querySelector('sumInput');
+    let inputTitleBox = document.querySelector('#nameInput');
+    let inputSumBox = document.querySelector('#sumInput');
 
     // Need the title,summary
     let titleItem = inputTitleBox.value;
