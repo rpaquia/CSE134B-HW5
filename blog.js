@@ -57,7 +57,7 @@ function addItem() { // Works
 // function for removing items, then saving updated array
 // to local storage
 function deleteItem(index) {
-    items.splice(index, 1);
+    items.splice(index, 2);
     localStorage.setItem("blog-list", JSON.stringify(items));
     listItems();
   }
