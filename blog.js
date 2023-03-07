@@ -61,12 +61,13 @@ function deleteItem(index) {
     localStorage.setItem("blog-list", JSON.stringify(items));
     listItems();
   }
-  
+  /*
   function markAsDone(index) {
     items[index].done = !items[index].done;
     localStorage.setItem("blog-list", JSON.stringify(items));
     listItems();
   }
+  */
 
 // function that creates the blog items and populates html page
 function listItems() {
