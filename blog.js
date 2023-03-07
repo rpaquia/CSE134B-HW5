@@ -85,7 +85,7 @@ function listItems() {
       //   "<span class='label alert' onclick='deleteItem(" +
       //   i +
       //   ")'>delete</span></li>";
-      list += `<li>${items[i].value}
+      list = list += `<li>${items[i].value}
       ${items[i].summary}
       ${items[i].time}
       <button onclick = "deleteItem(${i})">Delete</button>
