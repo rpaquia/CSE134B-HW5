@@ -21,8 +21,8 @@ saveButton.addEventListener('click', addItem);
 // Function that adds items to blog 
 function addItem() { // Works
     // gets value that is put inside <input> with querySelector
-    let inputTitleBox = document.getElementById('nameInput');
-    let inputSumBox = document.getElementById('sumInput');
+    let inputTitleBox = document.querySelector('#nameInput');
+    let inputSumBox = document.querySelector('#sumInput');
 
     // Need the title,summary
     let titleItem = inputTitleBox.value;
@@ -91,7 +91,7 @@ function listItems() {
       <button onclick = "deleteItem(${i})">Delete</button>
       </li>`
     }
-    document.querySelector("#blog-items").innerHTML = list;
+    document.getElementById("blog-items").innerHTML = list;
   }
   
   // function to run when page loads
