@@ -72,18 +72,21 @@ function deleteItem(index) {
 function listItems() {
     let list = "";
     for (let i = 0; i < items.length; i++) {
-      list += "<li class=" + (items[i].done ? "done" : "") + ">";
-      list += items[i].value + " ";
-      list +=
-        "<small title='click me to mark as done' class='label' onclick='markAsDone(" +
-        i +
-        ")'>" +
-        items[i].time +
-        "</small> ";
-      list +=
-        "<span class='label alert' onclick='deleteItem(" +
-        i +
-        ")'>delete</span></li>";
+      // list += "<li class=" + (items[i].done ? "done" : "") + ">";
+      // list += items[i].value + " ";
+      // list +=
+      //   "<small title='click me to mark as done' class='label' onclick='markAsDone(" +
+      //   i +
+      //   ")'>" +
+      //   items[i].time +
+      //   "</small> ";
+      // list +=
+      //   "<span class='label alert' onclick='deleteItem(" +
+      //   i +
+      //   ")'>delete</span></li>";
+      list += `<li>${items[i].value}
+      ${items[i].summary}
+      ${items[i].time}</li>`
     }
     document.querySelector("#blog-items").innerHTML = list;
   }
