@@ -12,9 +12,9 @@ const saveButton = document.getElementById('saveBut');
 screenAddBtn.addEventListener('click', () => {
     addDialogPopup.showModal(); 
 });
-addDialogPopup.addEventListener('close', () => {
-    listItems();
-});
+//addDialogPopup.addEventListener('close', () => {
+  //  listItems();
+//});
 
 saveButton.addEventListener('click', addItem);
 
