@@ -25,8 +25,8 @@ function addItem() { // Works
     let inputSumBox = document.getElementById('sumInput');
 
     // Need the title,summary
-    //let titleItem = inputTitleBox.value;
-    //let summaryItem = inputSumBox.value;
+    let titleItem = inputTitleBox.value;
+    let summaryItem = inputSumBox.value;
 
     // If either input is empty return and alert user
     if(titleItem === "") {
@@ -38,8 +38,8 @@ function addItem() { // Works
 
     // If inputs are valid, add them to array
     items.push({
-        value: inputTitleBox.value,
-        summary: inputSumBox.value,
+        value: titleItem,
+        summary: summaryItem,
         time: new Date().toLocaleDateString("en-US"),
     });
 
