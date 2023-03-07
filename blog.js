@@ -25,8 +25,8 @@ function addItem() { // Works
     let inputSumBox = document.getElementById('sumInput');
 
     // Need the title,summary
-    let titleItem = inputTitleBox.value;
-    let summaryItem = inputSumBox.value;
+    //let titleItem = inputTitleBox.value;
+    //let summaryItem = inputSumBox.value;
 
     // If either input is empty return and alert user
     if(titleItem === "") {
@@ -38,8 +38,8 @@ function addItem() { // Works
 
     // If inputs are valid, add them to array
     items.push({
-        value: titleItem,
-        summary: summaryItem,
+        value: inputTitleBox.value,
+        summary: inputSumBox.value,
         time: new Date().toLocaleDateString("en-US"),
     });
 
@@ -85,7 +85,7 @@ function listItems() {
       //   "<span class='label alert' onclick='deleteItem(" +
       //   i +
       //   ")'>delete</span></li>";
-      list = list += `<li>${items[i].value}
+      list += `<li>${items[i].value}
       ${items[i].summary}
       ${items[i].time}
       <button onclick = "deleteItem(${i})">Delete</button>
