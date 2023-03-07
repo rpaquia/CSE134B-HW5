@@ -86,7 +86,9 @@ function listItems() {
       //   ")'>delete</span></li>";
       list += `<li>${items[i].value}
       ${items[i].summary}
-      ${items[i].time}</li>`
+      ${items[i].time}
+      <button onclick = "deleteItem(${i})">Delete</button>
+      </li>`
     }
     document.querySelector("#blog-items").innerHTML = list;
   }
