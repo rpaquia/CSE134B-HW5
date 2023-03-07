@@ -21,8 +21,8 @@ saveButton.addEventListener('click', addItem);
 // Function that adds items to blog 
 function addItem() { // Works
     // gets value that is put inside <input> with querySelector
-    let inputTitleBox = document.querySelector('#nameInput');
-    let inputSumBox = document.querySelector('#sumInput');
+    let inputTitleBox = document.getElementById('nameInput');
+    let inputSumBox = document.getElementById('sumInput');
 
     // Need the title,summary
     let titleItem = inputTitleBox.value;
