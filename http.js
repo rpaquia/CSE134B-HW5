@@ -1,3 +1,7 @@
+
+const artNameInp = document.getElementById('articleName');
+const 
+
 // GET method
 function getFunc() {
     let xhr = new XMLHttpRequest();
