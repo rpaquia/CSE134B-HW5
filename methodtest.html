@@ -1,30 +1,51 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Method Test</title>
-
+    <meta charset="UTF-8">
+    <title>Hello Fetch</title>
 </head>
 <body>
-    <h1>HTTP Endpoint Testing</h1>
-    <form id="fakeRecord">
-        <label for="artName">Article Name:</label>
-        <input type="text" id="article_name">
-        <br>
-        <label for="artBody">Article Body:</label>
-        <textarea id="article_body" name="boxText"></textarea>
-        <output id="date"></output>
-    </form>
-    
-    <button id="posting">postBtn</button>
-    <button id="getting">getBtn</button>
-    <button id="putting">putBtn</button>
-    <button id="deleting">deleteBtn</button>
+<button id="helloBtn">Say Hello</button>
 
-    <br>
-    <hr>
-    <output id="postOut"></output>
-    <output id="getOut"></output>
-    <output id="puOut"></output>
-    <output id="deleteOut"></output>
+<output></output>
+
+<!--
+  - CORS set up
+  - using the right headers
+  - TODO: encoding and decoding URI formats, parseJSON and JSON.stringify
+  - using async/await vs promises VS traditional callbacks
+  - same lack of network smarts - errors, timeouts, etc.
+-->
+<script type="module">
+    window.addEventListener('DOMContentLoaded', init);
+
+    function init() {
+        let el;
+
+        el = document.getElementById('helloBtn').addEventListener('click', sayHello);
+    }
+
+    async function sayHello() {
+
+        let response = await fetch('http://localhost:3000/echo', {
+            method: 'POST',
+            mode: 'cors',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded',
+                'X-Sent-By': 'javascript'
+            },
+            body: encodeURIComponent(`message=hello there! @ ${new Date()})`)
+        });
+
+        if (response.ok) {
+            let responseText = await response.text();
+            document.querySelector('output').innerHTML = responseText;
+        } else {
+            alert(`Error : ${response.status}`)
+        }
+
+
+    }
+</script>
 </body>
-</html> 
+</html>
