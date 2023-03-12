@@ -32,10 +32,11 @@
 
             function handleResponse(xhr) {
                 if (xhr.readyState == 4 & xhr.status === 200) {
-                    let responseOutput = document.getElementById("")
+                    let responseOutput = document.getElementById("postOutput");
+                    responseOutput.innerHTML = xhr.responseText;
                 }
             }
-
+            
         </script>
     <button id="getting">getBtn</button>
     <button id="putting">putBtn</button>
@@ -43,7 +44,7 @@
 
     <hr>
 
-    <output id="postOut"></output>
+    <output id="postOutput"></output>
     <output id="getOut"></output>
     <output id="putOut"></output>
     <output id="deleteOut"></output>
