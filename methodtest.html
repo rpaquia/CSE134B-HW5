@@ -26,17 +26,12 @@
                 let xhr = new XMLHttpRequest();
                 xhr.open("POST", "https://httpbin.org/post", true);
                 xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-                xhr.onreadystatechange = function(){handleResponse(xhr);};
-                xhr.send(payload);
-            }
-
-            function handleResponse(xhr) {
-                if (xhr.readyState == 4 & xhr.status === 200) {
-                    let responseOutput = document.getElementById("postOutput");
-                    responseOutput.innerHTML = xhr.responseText;
+                xhr.onreadystatechange = function() {
+                    if (this.readyState == 4 && this.status == 200) {
+                        document.getElementById("postOutput").innerHTML = this.responseText;
+                    }
                 }
             }
-            
         </script>
     <button id="getting">getBtn</button>
     <button id="putting">putBtn</button>
