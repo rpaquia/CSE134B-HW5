@@ -22,13 +22,20 @@
     <br>
     <button id="posting">postBtn</button>
         <script type="module">
-            function getFunc(payload) {
+            function sendPost(payload) {
                 let xhr = new XMLHttpRequest();
                 xhr.open("POST", "https://httpbin.org/post", true);
                 xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
                 xhr.onreadystatechange = function(){handleResponse(xhr);};
                 xhr.send(payload);
             }
+
+            function handleResponse(xhr) {
+                if (xhr.readyState == 4 & xhr.status === 200) {
+                    let responseOutput = document.getElementById("")
+                }
+            }
+
         </script>
     <button id="getting">getBtn</button>
     <button id="putting">putBtn</button>
