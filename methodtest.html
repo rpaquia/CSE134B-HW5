@@ -1,60 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Hello Ajax</title>
+<title>Method Test</title>
+
 </head>
 <body>
-
-<button id="helloBtn">Say Hello</button>
-<hr>
-<output></output>
-
-<!--
-  - why a script module
-  - XHR Object name and note the wrapper from the old days
-  - Setting headers and body (Law of Three Redux)
-  - Use of the X-Header and why
-  - Encoding x-www-urlencoded
-  - onload vs onreadystatechange - the later is a bit more capable but less friendly!
-  - Introducing SOP & CORS - the solution was on the server side
-  - lack of error handling!
- -->
-<script type="module">
-    // use a type module to avoid poluting global name space will all our function names
+    <h1>HTTP Endpoint Testing</h1>
+    <form id="fakeRecord">
+        <label for="artName">Article Name:</label>
+        <input type="text" id="article_name">
+        <br>
+        <label for="artBody">Article Body:</label>
+        <textarea id="article_body" name="boxText"></textarea>
+        <output id="date"></output>
+    </form>
     
-    // avoid waiting until the full page load, jut wait until DOM is ready
-    window.addEventListener('DOMContentLoaded', init);
+    <button id="posting">postBtn</button>
+    <button id="getting">getBtn</button>
+    <button id="putting">putBtn</button>
+    <button id="deleting">deleteBtn</button>
 
-    function init() {
-        let el;
-
-        el = document.getElementById('helloBtn').addEventListener('click', sayHello);
-    }
-
-    function sayHello() {
-        let xhr = new XMLHttpRequest();
-
-        // forming the law of 3 request line method, URL, and optional async/sync flag
-        xhr.open('POST','http://localhost:3000/echo');
-
-        // a header we could use on the server-side to determine if from JS or if from a form
-        xhr.setRequestHeader('X-Sent-By','javascript');
-        
-        // the standard encoding
-        xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
-
-        xhr.onload = function () {
-            // TODO: refactor this to read the JSON and display the message instead of the raw JSON
-            
-            // how dangerous is it to just jam this content in here like this?
-            document.querySelector('output').innerHTML = xhr.responseText;
-        }
-
-        // note the creation of the message body manually and proper encoding here
-        xhr.send(`message=${encodeURIComponent('hello there it is ' + new Date())}`);
-    }
-</script>
-
+    <br>
+    <hr>
+    <output id="postOut"></output>
+    <output id="getOut"></output>
+    <output id="puOut"></output>
+    <output id="deleteOut"></output>
 </body>
-</html>
+</html> 
