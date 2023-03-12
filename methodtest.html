@@ -22,7 +22,7 @@
     <br>
     <button type="button" onclick="sendPost()" id="posting">postBtn</button>
         <script >
-            function sendPost(payload) {
+            function sendPost() {
                 let xhr = new XMLHttpRequest();
                 let payload = JSON.stringify(document.getElementById("fakeId"));
                 xhr.onreadystatechange = function() {
