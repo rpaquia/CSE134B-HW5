@@ -2,21 +2,28 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Hello Fetch</title>
+    <title>Hello Ajax</title>
 </head>
 <body>
-<button id="helloBtn">Say Hello</button>
 
+<button id="helloBtn">Say Hello</button>
+<hr>
 <output></output>
 
 <!--
-  - CORS set up
-  - using the right headers
-  - TODO: encoding and decoding URI formats, parseJSON and JSON.stringify
-  - using async/await vs promises VS traditional callbacks
-  - same lack of network smarts - errors, timeouts, etc.
--->
+  - why a script module
+  - XHR Object name and note the wrapper from the old days
+  - Setting headers and body (Law of Three Redux)
+  - Use of the X-Header and why
+  - Encoding x-www-urlencoded
+  - onload vs onreadystatechange - the later is a bit more capable but less friendly!
+  - Introducing SOP & CORS - the solution was on the server side
+  - lack of error handling!
+ -->
 <script type="module">
+    // use a type module to avoid poluting global name space will all our function names
+    
+    // avoid waiting until the full page load, jut wait until DOM is ready
     window.addEventListener('DOMContentLoaded', init);
 
     function init() {
@@ -25,27 +32,29 @@
         el = document.getElementById('helloBtn').addEventListener('click', sayHello);
     }
 
-    async function sayHello() {
+    function sayHello() {
+        let xhr = new XMLHttpRequest();
 
-        let response = await fetch('http://localhost:3000/echo', {
-            method: 'POST',
-            mode: 'cors',
-            headers: {
-                'Content-Type': 'application/x-www-form-urlencoded',
-                'X-Sent-By': 'javascript'
-            },
-            body: encodeURIComponent(`message=hello there! @ ${new Date()})`)
-        });
+        // forming the law of 3 request line method, URL, and optional async/sync flag
+        xhr.open('POST','http://localhost:3000/echo');
 
-        if (response.ok) {
-            let responseText = await response.text();
-            document.querySelector('output').innerHTML = responseText;
-        } else {
-            alert(`Error : ${response.status}`)
+        // a header we could use on the server-side to determine if from JS or if from a form
+        xhr.setRequestHeader('X-Sent-By','javascript');
+        
+        // the standard encoding
+        xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
+
+        xhr.onload = function () {
+            // TODO: refactor this to read the JSON and display the message instead of the raw JSON
+            
+            // how dangerous is it to just jam this content in here like this?
+            document.querySelector('output').innerHTML = xhr.responseText;
         }
 
-
+        // note the creation of the message body manually and proper encoding here
+        xhr.send(`message=${encodeURIComponent('hello there it is ' + new Date())}`);
     }
 </script>
+
 </body>
 </html>
