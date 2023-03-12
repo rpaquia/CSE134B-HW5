@@ -27,8 +27,7 @@
                 let payload = JSON.stringify(document.getElementById("fakeId"));
                 xhr.onreadystatechange = function() {
                     if (this.readyState == 4 && this.status == 200) {
-                        let output = document.getElementById("postOutput").innerHTML;
-                        output = document.getElementById("fakeId").value;
+                        document.getElementById("postOutput").innerHTML = document.getElementById("fakeId").value;
                     }
                 };
                 xhr.open("POST", "https://httpbin.org/post", true);
