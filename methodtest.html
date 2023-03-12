@@ -8,11 +8,11 @@
     <h1>HTTP Endpoint Testing</h1>
     <form id="fakeRecord">
         <label for="ident">ID:</label>
-        <input type="text" id="fakeId">
+        <input type="text" id="fakeId" name="fakeId">
         <br>
         <br>
         <label for="artName">Article Name:</label>
-        <input type="text" id="article_name">
+        <input type="text" id="article_name" name="article_name">
         <br>
         <br>
         <label for="artBody">Article Body:</label>
@@ -24,13 +24,14 @@
         <script type="module">
             function sendPost(payload) {
                 let xhr = new XMLHttpRequest();
-                xhr.open("POST", "https://httpbin.org/post", true);
-                xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
                 xhr.onreadystatechange = function() {
                     if (this.readyState == 4 && this.status == 200) {
-                        document.getElementById("postOutput").innerHTML = this.responseText;
+                        document.getElementById("postOutput").innerHTML = document.getElementById(fakeId).value;
                     }
                 };
+                xhr.open("POST", "https://httpbin.org/post", true);
+                xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+                xhr.send("")
             }
         </script>
     <button id="getting">getBtn</button>
