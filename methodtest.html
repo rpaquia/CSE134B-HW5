@@ -35,16 +35,29 @@
                 xhr.send(payload);
             }
         </script>
-    <button id="getting">getBtn</button>
+    <button type="button" onclick="sendGet()" id="getting" >getBtn</button>
+        <script>
+            function loadDoc() {
+                let xhr = new XMLHttpRequest();
+                xhr.onload = function() {
+                    document.getElementById("getOut").innerHTML = this.responseText;
+                }
+                xhr.open("GET", "https://httpbin.org/get");
+                xhr.send();
+            }
+        </script>
+
     <button id="putting">putBtn</button>
     <button id="deleting">deleteBtn</button>
+
 
     <hr>
     <p>User will POST:
        <output id="postOutput"></output> 
     </p>
-    
-    <output id="getOut"></output>
+    <p>User will GET:
+        <output id="getOut"></output>
+    </p>
     <output id="putOut"></output>
     <output id="deleteOut"></output>
 
