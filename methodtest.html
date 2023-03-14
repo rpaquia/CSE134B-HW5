@@ -28,7 +28,8 @@
             let data = {
                 id: identify,
                 art: article,
-                aBod: artBody
+                aBod: artBody,
+                time: new Date().toLocaleDateString("en-US")
             }
             console.log(data);
             async function sendPost() {
