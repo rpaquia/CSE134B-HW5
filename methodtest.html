@@ -23,7 +23,6 @@
     <button type="button" onclick="sendPost()" id="posting">postBtn</button>
         <script >
             let data = document.getElementById("fakeId").value;
-            console.log(JSON.stringify(data));
             async function sendPost() {
                 let response = await fetch('https://httpbin.org/post', {
                     method: 'POST',
@@ -34,6 +33,7 @@
                     },
                     body: JSON.stringify(data)
                 });
+                console.log(JSON.stringify(data));
             }
 
         </script>
