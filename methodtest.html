@@ -25,6 +25,7 @@
             function sendPost() {
                 let xhr = new XMLHttpRequest();
                 let payload = JSON.stringify(document.getElementById("fakeId"));
+                console.log(payload);
                 xhr.onreadystatechange = function() {
                     if (this.readyState == 4 && this.status == 200) {
                         document.getElementById("postOutput").innerHTML = document.getElementById("fakeId").value;
