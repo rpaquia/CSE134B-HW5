@@ -33,7 +33,12 @@
                     },
                     body: JSON.stringify(data)
                 });
-                console.log(JSON.stringify(data));
+                if (response.ok) {
+                    let responseText = await response.text();
+                    document.querySelector('postOutput').innerHTML = responseText;
+                } else {
+                    alert(`Error : ${response.status}`)
+                }
             }
 
         </script>
