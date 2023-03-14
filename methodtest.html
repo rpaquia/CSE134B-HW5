@@ -81,11 +81,21 @@
             document.getElementById('putOut').innerHTML = responseText;
             
         }
-
-        
         </script>
-    <button id="deleting">deleteBtn</button>
 
+    <button id="deleting">deleteBtn</button>
+        <script>
+            async function sendDel() {
+                let response = await fetch("https://httpbin.org/delete", {
+                    method: "DELETE",
+                    headers: {'Content-Type': 'application/x-www-form-urlencoded',
+                    'X-Sent-By': 'javascript'
+                    },
+                });
+                let responseText = await response.text();
+                document.getElementById('deleteOut').innerHTML = responseText;
+            }
+        </script>
 
     <hr>
     <p><u>User will "POST":</u>
@@ -97,7 +107,7 @@
     <p><u>User will "PUT":</u>
         <output id="putOut"></output>    
     </p>
-    <p><u>User will "Delete"</u>
+    <p><u>User will "DELETE"</u>
         <output id="deleteOut"></output>
     </p>
 </body>
