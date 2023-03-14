@@ -50,9 +50,24 @@
 
     <button type="button" onclick="sendPut()" id="putting">putBtn</button>
         <script>
-            function sendPut() {
-                let xhr = new XMLHttpRequest();
-            }
+            async function sendPut() {
+                let data = JSON.stringify(document.getElementById("fakeId"));
+                let response = await fetch("https://httpbin.org/put", {
+                    method: 'PUT',
+                    headers: {
+                        'Content-type': 'application/x-www-form-urlencoded',
+                        'X-Sent-By': 'javascript'
+                    },
+                    body: data
+            });
+            let respData = await response.json();
+            
+            console.log(data)
+    
+            return resData;
+        }
+
+        
         </script>
     <button id="deleting">deleteBtn</button>
 
