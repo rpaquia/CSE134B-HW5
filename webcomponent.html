@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Button Clicker Web Component</title>
+</head>
+    <body>
+        <button-count></button-count>
+            <script>
+                class ButtonCount extends HTMLElement {
+                    constructor() {
+                        // Must call super() first in constructor
+                        super();
+                        // Attach Shadow DOM to web component to protect its scope
+                        this.attachShadow({mode:'open'});
+                        // Add my content to the ROOT of the Shadow DOM that was made
+                        this.shadowRoot.innerHTML = '<h1>Testing</h1>'
+                    }
+                }
+                // Define ButtonCLicker class in custom elements registry so I may use it
+                window.customElements.define('button-count', ButtonCount);
+            </script>
+    </body>
+</html> 
