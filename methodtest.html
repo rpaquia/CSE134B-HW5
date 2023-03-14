@@ -83,7 +83,7 @@
         }
         </script>
 
-    <button id="deleting">deleteBtn</button>
+    <button type="button" onclick="sendDel()" id="deleting">deleteBtn</button>
         <script>
             async function sendDel() {
                 let response = await fetch("https://httpbin.org/delete", {
