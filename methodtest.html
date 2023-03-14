@@ -21,7 +21,7 @@
     </form>
     <br>
     <button type="button" onclick="sendPost()" id="posting">postBtn</button>
-        <script >
+        <script type="module">
             let identify = document.getElementById("fakeId").value;
             let article = document.getElementById("article_name").value;
             let artBody = document.getElementById("article_body").value;
@@ -52,7 +52,7 @@
 
         </script>
     <button type="button" onclick="sendGet()" id="getting" >getBtn</button>
-        <script>
+        <script type="module">
             function sendGet() {
                 let xhr = new XMLHttpRequest();
                 xhr.onload = function() {
@@ -64,7 +64,7 @@
         </script>
 
     <button type="button" onclick="sendPut()" id="putting">putBtn</button>
-        <script>
+        <script type="module"> 
             let info = {
                 id: "identify",
                 art: "article",
@@ -90,7 +90,7 @@
         </script>
 
     <button type="button" onclick="sendDel()" id="deleting">deleteBtn</button>
-        <script>
+        <script type="module">
             async function sendDel() {
                 let response = await fetch("https://httpbin.org/delete", {
                     method: "DELETE",
