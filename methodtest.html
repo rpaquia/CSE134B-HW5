@@ -76,7 +76,7 @@
                     body: JSON.stringify(data)
             });
             let respData = await response.json();
-            return respData;
+            document.getElementById('putOut').innerHTML = respData;
         }
 
         
