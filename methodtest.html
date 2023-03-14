@@ -44,7 +44,8 @@
                 if (response.ok) {
                     let responseText = await response.text();
                     document.getElementById('postOutput').innerHTML = responseText;
-                } else {
+                } 
+                else {
                     alert(`Error : ${response.status}`)
                 }
             }
@@ -78,9 +79,13 @@
                     },
                     body: JSON.stringify(info)
             });
-            let responseText = await response.text();
-            document.getElementById('putOut').innerHTML = responseText;
-            
+            if (response.ok) {
+                let responseText = await response.text();
+                document.getElementById('putOut').innerHTML = responseText;
+            }
+            else {
+                alert(`Error : ${response.status}`)
+            }
         }
         </script>
 
@@ -93,8 +98,13 @@
                     'X-Sent-By': 'javascript'
                     },
                 });
-                let responseText = await response.text();
-                document.getElementById('deleteOut').innerHTML = responseText;
+                if (response.ok) {
+                    let responseText = await response.text();
+                    document.getElementById('deleteOut').innerHTML = responseText;
+                }
+                else {
+                    alert(`Error : ${response.status}`)
+                }
             }
         </script>
 
