@@ -65,7 +65,7 @@
                 aBod: "artBody"
             }
             async function sendPut() {
-                let data = info;
+                
                 
                 let response = await fetch("https://httpbin.org/put", {
                     method: 'PUT',
@@ -73,7 +73,7 @@
                         'Content-type': 'application/x-www-form-urlencoded',
                         'X-Sent-By': 'javascript'
                     },
-                    body: JSON.stringify(data)
+                    body: JSON.stringify(info)
             });
             let respData = await response.json();
             document.getElementById('putOut').innerHTML = respData;
