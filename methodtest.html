@@ -30,6 +30,7 @@
                 art: article,
                 aBod: artBody
             }
+            console.log(data);
             async function sendPost() {
                 let response = await fetch('https://httpbin.org/post', {
                     method: 'POST',
