@@ -22,7 +22,14 @@
     <br>
     <button type="button" onclick="sendPost()" id="posting">postBtn</button>
         <script >
-            let data = document.getElementById("fakeId").value;
+            let identify = document.getElementById("fakeId").value;
+            let article = document.getElementById("article_name").value;
+            let artBody = document.getElementById("article_body").value;
+            let data = {
+                id: identify,
+                art: article,
+                aBod: artBody
+            }
             async function sendPost() {
                 let response = await fetch('https://httpbin.org/post', {
                     method: 'POST',
@@ -56,17 +63,12 @@
 
     <button type="button" onclick="sendPut()" id="putting">putBtn</button>
         <script>
-            let identify = document.getElementById("fakeId").value;
-            let article = document.getElementById("article_name").value;
-            let artBody = document.getElementById("article_body").value;
             let info = {
                 id: "identify",
                 art: "article",
                 aBod: "artBody"
             }
             async function sendPut() {
-                
-                
                 let response = await fetch("https://httpbin.org/put", {
                     method: 'PUT',
                     headers: {
