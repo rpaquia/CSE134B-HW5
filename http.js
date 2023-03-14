@@ -1,2 +1,1 @@
 // PUT Method
-async

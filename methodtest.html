@@ -22,20 +22,20 @@
     <br>
     <button type="button" onclick="sendPost()" id="posting">postBtn</button>
         <script >
-            function sendPost() {
-                let xhr = new XMLHttpRequest();
-                let payload = JSON.stringify(document.getElementById("fakeId"));
-                console.log(payload);
-                xhr.onreadystatechange = function() {
-                    if (this.readyState == 4 && this.status == 200) {
-                        document.getElementById("postOutput").innerHTML = document.getElementById("fakeId").value;
-                    }
-                };
-                xhr.open("POST", "https://httpbin.org/post", true);
-                xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-                xhr.send(payload);
-                console.log("Complete");
+            let data = document.getElementById("fakeId").value;
+            console.log(data);
+            async function sendPost() {
+                let response = await fetch('https://httpbin.org/post', {
+                    method: 'POST',
+                    mode: 'cors',
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded',
+                        'X-Sent-By': 'javascript'
+                    },
+                    body: JSON.stringify(data)
+                });
             }
+
         </script>
     <button type="button" onclick="sendGet()" id="getting" >getBtn</button>
         <script>
