@@ -56,8 +56,16 @@
 
     <button type="button" onclick="sendPut()" id="putting">putBtn</button>
         <script>
+            let identify = document.getElementById("fakeId").value;
+            let article = document.getElementById("article_name").value;
+            let artBody = document.getElementById("article_body").value;
+            let info = {
+                id: identify,
+                art: article,
+                aBod: artBody
+            }
             async function sendPut() {
-                let data = document.getElementById("fakeId").value;
+                let data = info;
                 console.log(data);
                 let response = await fetch("https://httpbin.org/put", {
                     method: 'PUT',
