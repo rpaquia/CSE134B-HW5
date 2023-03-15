@@ -6,7 +6,7 @@ class ButtonCount extends HTMLElement {
         const shadow = this.attachShadow({mode:'open'});
         
         shadow.innerHTML = `
-            <button type='button' id='counter' onclick='Increment()'
+            <button type='button' id='counter' onclick='Increment()'>Times Clicked:</button>
             <script>
                 function Increment() {
                     let count = 0;
@@ -14,7 +14,7 @@ class ButtonCount extends HTMLElement {
                     
                     btn.onclick = function () {
                         count++;
-                        button.innerHTML = 'Times Clicker' + count;
+                        button.innerHTML = 'Times Clicked' + count;
                     }
                 }
             </script>
