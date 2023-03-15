@@ -6,7 +6,7 @@ function Increment() {
     btn.onclick = function () {
         
         count = count + 1;
-        btn.innerHTML = 'Times Clicker: ' + count;
+        btn.innerHTML = 'Times Clicked: ' + count;
         }
     }
 class ButtonCount extends HTMLElement {
@@ -20,12 +20,13 @@ class ButtonCount extends HTMLElement {
         const button = document.createElement('button');
         
         // Set button's attributes
-        button.innerHTML = 'Times Clicker: '
+        button.innerHTML = 'Times Clicked: 0'
         button.setAttribute('type', 'button'); // type='button'
         button.setAttribute('id', 'counter'); // id='counter
         button.setAttribute('onclick', 'Increment()') // onclick='Increment()'
         
-        document.querySelector('body').appendChild(button);
+        //document.querySelector('body').appendChild(button);
+        shadow.appendChild(button);
     }
 }
 // Define ButtonCLicker class in custom elements registry so I may use it
