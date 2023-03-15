@@ -28,10 +28,5 @@ class ButtonCount extends HTMLElement {
 
     }
 }
-
-
-
-
-
 // Define ButtonCLicker class in custom elements registry so I may use it
 customElements.define('button-count', ButtonCount);
