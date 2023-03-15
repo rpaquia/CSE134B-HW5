@@ -20,7 +20,7 @@ class ButtonCount extends HTMLElement {
         const button = document.createElement('button');
         
         // Set button's attributes
-        button.innerHTML = 'Times Clicker: 0'
+        button.innerHTML = 'Times Clicker: '
         button.setAttribute('type', 'button'); // type='button'
         button.setAttribute('id', 'counter'); // id='counter
         button.setAttribute('onclick', 'Increment()') // onclick='Increment()'
