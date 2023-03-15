@@ -1,7 +1,7 @@
 // Set up counter
         function Increment() {
             let count = 0;
-            let btn = document.getElementById('counter').value;
+            let btn = document.getElementById('counter');
             
             btn.onclick = function () {
                 count++;
