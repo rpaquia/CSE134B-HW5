@@ -4,7 +4,7 @@
             let btn = document.getElementById('counter');
             
             count++;
-            button.innerHTML = 'Times Clicker' + count;
+            btn.innerHTML = 'Times Clicker' + count;
             
         }
 class ButtonCount extends HTMLElement {
