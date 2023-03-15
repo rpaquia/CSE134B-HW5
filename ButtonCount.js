@@ -1,3 +1,13 @@
+// Set up counter
+        function Increment() {
+            let count = 0;
+            let btn = document.getElementById('counter').value;
+            
+            btn.onclick = function () {
+                count++;
+                button.innerHTML = 'Times Clicker' + count;
+            }
+        }
 class ButtonCount extends HTMLElement {
     constructor() {
         // Must call super() first in constructor
@@ -13,19 +23,10 @@ class ButtonCount extends HTMLElement {
         button.setAttribute('id', 'counter'); // id='counter
         button.setAttribute('onclick', 'Increment()') // onclick='Increment()'
         
-        // Set up counter
-        function Increment() {
-            let count = 0;
-            let btn = document.getElementById('counter');
-            
-            btn.onclick = function () {
-                count++;
-                button.innerHTML = 'Times Clicker' + count;
-            }
-        }
+        
         document.querySelector('body').appendChild(button);
-
     }
+    
 }
 // Define ButtonCLicker class in custom elements registry so I may use it
 customElements.define('button-count', ButtonCount);
