@@ -25,7 +25,7 @@ class ButtonCount extends HTMLElement {
         button.setAttribute('id', 'counter'); // id='counter
         button.setAttribute('onclick', 'Increment()') // onclick='Increment()'
         
-        //document.querySelector('body').appendChild(button);
+        document.querySelector('body').appendChild(button);
         shadow.appendChild(button);
     }
 }
