@@ -6,7 +6,7 @@
             btn.onclick = function () {
                 count++;
                 btn.innerHTML = 'Times Clicker: ' + count;
-            
+            }
         }
 class ButtonCount extends HTMLElement {
     constructor() {
