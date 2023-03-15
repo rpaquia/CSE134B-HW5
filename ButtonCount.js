@@ -10,7 +10,6 @@ class ButtonCount extends HTMLElement {
                 <script>
                     function Increment() {
                         let count = 0;
-                        let btn = document.getElementById('counter');
                         count++;
                         button.innerHTML = 'Times Clicked' + count;
                     }
