@@ -26,7 +26,7 @@ class ButtonCount extends HTMLElement {
         button.setAttribute('onclick', 'Increment()') // onclick='Increment()'
         
         document.querySelector('body').appendChild(button);
-        shadow.appendChild(button);
+        //shadow.appendChild(button);
     }
 }
 // Define ButtonCLicker class in custom elements registry so I may use it
