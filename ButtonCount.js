@@ -3,8 +3,9 @@
             let count = 0;
             let btn = document.getElementById('counter');
             
-            count++;
-            btn.innerHTML = 'Times Clicker' + count;
+            btn.onclick = function () {
+                count++;
+                btn.innerHTML = 'Times Clicker: ' + count;
             
         }
 class ButtonCount extends HTMLElement {
