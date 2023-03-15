@@ -6,11 +6,12 @@ class ButtonCount extends HTMLElement {
         const shadow = this.attachShadow({mode:'open'});
         
         // Create button
-        const wrapper = document.createElement('button');
+        const button = document.createElement('button');
         // Set button's attributes
-        wrapper.setAttribute('type', 'button');
+        button.innerHTML = 'Click to increment'
+        button.setAttribute('type', 'button');
+        document.querySelector('body').appendChild(button);
 
-        
 
     }
 }
