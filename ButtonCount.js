@@ -1,9 +1,10 @@
 // Set up counter
 function Increment() {
-    let count = 0;
+    
     let btn = document.getElementById('counter');
             
     btn.onclick = function () {
+        let count = 0;
         count++;
         btn.innerHTML = 'Times Clicker: ' + count;
         }
