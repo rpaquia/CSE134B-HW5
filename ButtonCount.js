@@ -7,20 +7,15 @@ class ButtonCount extends HTMLElement {
         
         shadow.innerHTML = `
             <button type='button' id='counter' onclick='Increment()'>Times Clicked:</button>
-            <script>
-                function Increment() {
-                    let count = 0;
-
-                    let btn = document.getElementById('counter');
-                    
-                    count++;
-                        
-                    button.innerHTML = 'Times Clicked' + count;
-                    
-                }
-            </script>
-        
-        `
+                <script>
+                    function Increment() {
+                        let count = 0;
+                        let btn = document.getElementById('counter');
+                        count++;
+                        button.innerHTML = 'Times Clicked' + count;
+                    }
+                </script>
+        `;
         
     }
 }
