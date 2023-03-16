@@ -2,6 +2,8 @@ Name: Ryan Paquia
 
 PID: A16670357
 
+Netlify Link: https://resilient-genie-916444.netlify.app
+
 Links to methodtest.html and webcomponent.html can be found in the top right of my website's homepage. 
 For Part 1 I tried to use XMLHttpRequest for the GET method then I used fetch() for the remaining methods.
 Also, for the POST method there is a bug where upon loading into the page for the first time, if you enter
