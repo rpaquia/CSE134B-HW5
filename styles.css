@@ -68,6 +68,15 @@ input[type=text] {
     border-radius: 4px;
   }
 
+div.container {
+    text-align: center;
+}
+  
+ul.centLst {
+    display: inline-block;
+    text-align: left;
+}
+
 /* CSS transition */
 button {
     width:100px;
