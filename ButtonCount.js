@@ -12,8 +12,9 @@ class ButtonCount extends HTMLElement {
         button.textContent = "Times Clicked" ;
 
         button.addEventListener('click', () => {
-            count = count + 1;
-            button.textContent = "Times Clicked:${count}";
+            count++;
+            console.log('Times Clicked: ${count} ' )
+            
         });
         shadow.appendChild(button);
     }
