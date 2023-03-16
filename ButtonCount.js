@@ -9,11 +9,11 @@ class ButtonCount extends HTMLElement {
         
         // Create button
         const button = document.createElement('button');
-        button.textContent = "Times Clicked";
+        button.textContent = "Times Clicked" ;
 
         button.addEventListener('click', () => {
             count = count + 1;
-            button.textContent = "Times Clicked:" + "$(count)";
+            button.textContent = "Times Clicked:${count}";
         });
         shadow.appendChild(button);
     }
