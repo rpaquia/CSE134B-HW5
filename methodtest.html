@@ -26,7 +26,12 @@
         <script>
             let element = document.getElementById("posting");
             element.addEventListener("click", getInfo());
-
+            let data = {
+                id: 0,
+                art: 0,
+                aBod: 0,
+                time: 0
+            }
             function getInfo() {
                 let identify = document.getElementById("fakeId").value;
                 let article = document.getElementById("article_name").value;
