@@ -25,19 +25,23 @@
     <button type="button" id="posting">postBtn</button>
         <script>
             let element = document.getElementById("posting");
-            element.addEventListener("click", sendPost());
-            let identify = document.getElementById("fakeId").value;
-            let article = document.getElementById("article_name").value;
-            let artBody = document.getElementById("article_body").value;
-            let data = {
-                id: identify,
-                art: article,
-                aBod: artBody,
-                time: new Date().toLocaleDateString("en-US")
+            element.addEventListener("click", getInfo());
+
+            function getInfo() {
+                let identify = document.getElementById("fakeId").value;
+                let article = document.getElementById("article_name").value;
+                let artBody = document.getElementById("article_body").value;
+                let data = {
+                    id: identify,
+                    art: article,
+                    aBod: artBody,
+                    time: new Date().toLocaleDateString("en-US")
+                }
+                sendPost();
             }
+            
             console.log(data);
             async function sendPost() {
-                
                 let response = await fetch('https://httpbin.org/post', {
                     method: 'POST',
                     mode: 'cors',
