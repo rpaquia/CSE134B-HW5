@@ -22,19 +22,22 @@
     <br>
 
     <!--"POST" method using fetch()-->
-    <button type="button" onclick="sendPost()" id="posting">postBtn</button>
+    <button type="button" id="posting">postBtn</button>
         <script>
-            let identify = document.getElementById("fakeId").value;
-            let article = document.getElementById("article_name").value;
-            let artBody = document.getElementById("article_body").value;
-            let data = {
-                id: identify,
-                art: article,
-                aBod: artBody,
-                time: new Date().toLocaleDateString("en-US")
-            }
+            let element = document.getElementById("posting");
+            element.addEventListener("click", sendPost());
+            
             console.log(data);
             async function sendPost() {
+                let identify = document.getElementById("fakeId").value;
+                let article = document.getElementById("article_name").value;
+                let artBody = document.getElementById("article_body").value;
+                let data = {
+                    id: identify,
+                    art: article,
+                    aBod: artBody,
+                    time: new Date().toLocaleDateString("en-US")
+                }
                 let response = await fetch('https://httpbin.org/post', {
                     method: 'POST',
                     mode: 'cors',
