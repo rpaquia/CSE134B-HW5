@@ -73,7 +73,8 @@
             let info = {
                 id: "identify",
                 art: "article",
-                aBod: "artBody"
+                aBod: "artBody",
+                time: new Date().toLocaleDateString("en-US")
             }
             async function sendPut() {
                 let response = await fetch("https://httpbin.org/put", {
