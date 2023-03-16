@@ -27,7 +27,7 @@
             let element = document.getElementById("posting");
             element.addEventListener("click", sendPost());
             
-            console.log(data);
+            
             async function sendPost() {
                 let identify = document.getElementById("fakeId").value;
                 let article = document.getElementById("article_name").value;
@@ -38,6 +38,7 @@
                     aBod: artBody,
                     time: new Date().toLocaleDateString("en-US")
                 }
+                console.log(data);
                 let response = await fetch('https://httpbin.org/post', {
                     method: 'POST',
                     mode: 'cors',
