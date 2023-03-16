@@ -11,6 +11,7 @@ class ButtonCount extends HTMLElement {
         const button = document.createElement('button');
         button.textContent = `Times Clicked: ${count}`;
 
+        // Add in button functionality
         button.addEventListener('click', () => {
             count++;
             console.log(`Times Clicked: ${count}`);
