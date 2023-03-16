@@ -17,6 +17,7 @@ class ButtonCount extends HTMLElement {
             button.textContent = `Times Clicked: ${count}`;
             
         });
+        // Attach shadow web component ro shadow DOM
         shadow.appendChild(button);
     }
 }

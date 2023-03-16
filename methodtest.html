@@ -20,6 +20,8 @@
         <output id="date"></output>
     </form>
     <br>
+
+    <!--"POST" method using fetch()-->
     <button type="button" onclick="sendPost()" id="posting">postBtn</button>
         <script>
             let identify = document.getElementById("fakeId").value;
@@ -51,7 +53,8 @@
                 }
             }
         </script>
-        
+    
+    <!--"GET" method using XMLHttpRequest-->
     <button type="button" onclick="sendGet()" id="getting" >getBtn</button>
         <script>
             function sendGet() {
@@ -64,6 +67,7 @@
             }
         </script>
 
+    <!--"PUT" method using fetch()-->
     <button type="button" onclick="sendPut()" id="putting">putBtn</button>
         <script>
             let info = {
@@ -89,7 +93,8 @@
             }
         }
         </script>
-
+    
+    <!--"DELETE" method using fetch()-->
     <button type="button" onclick="sendDel()" id="deleting">deleteBtn</button>
         <script>
             async function sendDel() {
@@ -108,10 +113,8 @@
                 }
             }
         </script>
-
     <hr>
     
-
     <p><u>HTTP Response:</u>
         <output id="response"></output>
     </p>
