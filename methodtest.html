@@ -42,11 +42,11 @@
                     aBod: artBody,
                     time: new Date().toLocaleDateString("en-US")
                 }
-                sendPost();
+                sendPost(data);
             }
             
             console.log(data);
-            async function sendPost() {
+            async function sendPost(data) {
                 let response = await fetch('https://httpbin.org/post', {
                     method: 'POST',
                     mode: 'cors',
